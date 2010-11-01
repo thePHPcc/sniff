@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <?php $profile = $response->profile; ?>
+    <title>sniff :: Social Network - Insecurity For Friends - <?php echo $profile->NAME; ?></title>
+</head>
+<body>
+    <div id="header">
+       <h1>sniff :: Social Network - Insecurity For Friends</h1>
+    </div>
+    <div>
+    <fieldset>
+      <legend>Profile of <?php echo $profile->NAME; ?>:</legend>
+         <?php if ($profile->PICTURE != '') { ?>
+         <img style="width:100px; float:left;" src="/pictures/<?php echo $profile->UID; ?>/<?php echo $profile->PICTURE; ?>" />
+         <?php } ?>
+         <table>
+            <tr>
+               <td>eMail:</td>
+               <td><a href="mailto:<?php echo $profile->EMAIL; ?>"><?php echo $profile->EMAIL; ?></a></td>
+            </tr>
+            <tr>
+               <td>About:</td>
+               <td>
+                  <?php echo $profile->DESCR; ?></td>
+            </tr>
+         </table>
+    </fieldset>
+    </div>
+</body>
+</html>

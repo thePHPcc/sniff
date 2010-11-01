@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>sniff :: Social Network - Insecurity For Friends - Homepage </title>
+</head>
+<body>
+    <div id="header">
+       <h1>sniff :: Social Network - Insecurity For Friends</h1>
+    </div>
+    <div>
+       <?php
+            $msg = $request->getValue('message');
+            if ($msg) {
+               echo '<p style="color:green;">'.$msg.'</p>';
+            }
+         ?>
+    <fieldset id="login">
+       <legend>Login:</legend>    
+       <form action="/sniff/login" method="post">
+         <table>
+            <tr>
+               <td>Login:</td>
+               <td><input type="text" name="username" /></td>
+            </tr>
+            <tr>
+               <td>Password:</td>
+               <td><input type="password" name="passwd" /></td>
+            </tr>
+            <tr>
+               <td>&#160;</td>
+               <td><input type="submit" value="Login!" /></td>
+            </tr>
+        </table>
+       </form>
+    </fieldset>
+    <fieldset id="register" title="Register">    
+       <legend>Register:</legend>    
+       <form action="/sniff/register" method="post">
+         <table>
+            <tr>
+               <td>Login:</td>
+               <td><input type="text" name="username" /></td>
+            </tr>
+            <tr>
+               <td>Password:</td>
+               <td><input type="password" name="passwd" /></td>
+            </tr>
+            <tr>
+               <td>Name:</td>
+               <td><input type="text" name="name" /></td>
+            </tr>            
+            <tr>
+               <td>Mail:</td>
+               <td><input type="text" name="email" /></td>
+            </tr>
+            <tr>
+               <td>&#160;</td>
+               <td><input type="submit" value="Register me!" /></td>
+            </tr>
+        </table>
+       </form>
+    </fieldset>
+    </div>
+</body>
+</html>

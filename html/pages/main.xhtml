@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>sniff :: Social Network - Insecurity For Friends - Homepage </title>
+</head>
+<body>
+    <div id="header">
+       <h1>sniff :: Social Network - Insecurity For Friends</h1>
+    </div>
+    <div>
+    <fieldset>
+      <legend>Welcome home, <?php echo $request->getValue('user')->NAME; ?></legend>
+         <?php
+            $msg = $request->getValue('message');
+            if ($msg) {
+               echo '<p style="color:green;">'.$msg.'</p>';
+            }
+         ?>
+        <p>
+           <a href="/sniff/profile">Watch your profile</a> | <a href="/sniff/profileeditor">Edit your profile</a>
+        </p>        
+    </fieldset>
+    <fieldset>
+      <legend>Your Friends:</legend>
+         <table>
+            <?php foreach($response->FRIENDS as $friend) { ?>
+            <tr>
+               <td><a href="/sniff/profile?login=<?php echo $friend->USERNAME; ?>"><?php echo $friend->NAME ?></a></td>
+               <td>[ <a href="/sniff/unfriend?uid=<?php echo $friend->USERNAME; ?>">unfriend</a> ]</td>
+            </tr>
+            <?php } ?>
+         </table>
+         <div>
+         <form action="/sniff/addfriend" method="get">
+            <input type="text" name="friend" />
+            <input type="submit" value="Add!" />
+         </form>
+         </div>
+    </fieldset>
+    </div>
+</body>
+</html>

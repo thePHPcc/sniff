@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <?php $profile = $response->profile; ?>
+    <title>sniff :: Social Network - Insecurity For Friends - <?php echo $profile->NAME; ?></title>
+</head>
+<body>
+    <div id="header">
+       <h1>sniff :: Social Network - Insecurity For Friends</h1>
+    </div>
+    <div>
+    <fieldset>
+      <legend>Edit your profile</legend>
+         <form enctype="multipart/form-data" action="/sniff/profileupdate" method="post">
+         <input type="hidden" name="UID" value="<?php echo $profile->UID; ?>" />
+         <table>
+            <tr>
+               <td>Realname:</td>
+               <td><input type="text" name="NAME" value="<?php echo $profile->NAME; ?>" /></td>
+            </tr>
+            <tr>
+               <td>eMail:</td>
+               <td><input type="text" name="EMAIL" value="<?php echo $profile->EMAIL; ?>" /></td>
+            </tr>
+            <tr>
+               <td>About:</td>
+               <td>
+                  <textarea name="DESCR"><?php echo $profile->DESCR; ?></textarea>
+               </td>
+            </tr>
+            <tr>
+               <td>Upload new Picture:</td>
+               <td><input type="file" name="PICTURE" /></td>
+            </tr>
+            <tr>
+               <td>&#160;</td>
+               <td><input type="submit" value="Update!" /></td>
+            </tr>
+         </table>
+         </form>
+    </fieldset>
+    </div>
+</body>
+</html>
