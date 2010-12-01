@@ -20,7 +20,7 @@ class sniffFileUpload {
     protected $file;
 
     public function __construct($file) {
-        if(true || !is_uploaded_file($file)) {
+        if(!is_uploaded_file($file)) {
             // Only user uploads are valid
             $this->file = $file;
         } else {
