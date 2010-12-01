@@ -6,6 +6,8 @@ spl_autoload_register(
          'sniffresponseexception' => '/classes/response.php',
          'sniffrequest' => '/classes/request.php',
          'sniffviewinterface' => '/classes/viewinterface.php',
+         'snifffileupload' => '/classes/fileupload.php',
+         'snifffileuploadeexception' => '/classes/fileupload.php',
          'sniffcontroller' => '/classes/controller.php',
          'snifffrontcontroller' => '/classes/front.php',
          'snifffactory' => '/classes/factory.php',
